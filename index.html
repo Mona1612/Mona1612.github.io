@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My To-Do List</title>
+</head>
+<body>
+    <h1>Welcome, [User Name]</h1> <!-- Display user's name from Okta -->
+    <h2>My To-Do List</h2>
+    <input type="text" id="task" placeholder="Enter a to-do item">
+    <button onclick="addTask()">Add</button>
+    <ul id="taskList"></ul>
+</body>
+<script>
+    // JavaScript for adding tasks
+    function addTask() {
+        const taskInput = document.getElementById('task');
+        const taskText = taskInput.value.trim();
+
+        if (taskText) {
+            const taskList = document.getElementById('taskList');
+            const taskItem = document.createElement('li');
+            taskItem.textContent = taskText;
+            taskList.appendChild(taskItem);
+            taskInput.value = ''; // Clear the input field
+        }
+    }
+</script>
+</html>
